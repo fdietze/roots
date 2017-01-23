@@ -4,9 +4,6 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:/graph_posts.csv" AS row
 CREATE (:Post {id: row.id, title: row.title});
 
-CREATE INDEX ON :Post(id);
-CREATE INDEX ON :Post(title);
-
 CREATE CONSTRAINT ON (p:Post) ASSERT p.id IS UNIQUE;
 
 schema await

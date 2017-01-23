@@ -24,9 +24,9 @@ public class ConnectedComponent {
     @Procedure(value = "connectedComponent")
     public Stream<Visited> connectedComponent(@Name("start") Node start) {
         return graphDatabaseService.traversalDescription()
-               .depthFirst()
+               .breadthFirst()
                .relationships( RelTypes.CONNECTS, Direction.OUTGOING )
-               .uniqueness( Uniqueness.RELATIONSHIP_GLOBAL )
+               .uniqueness( Uniqueness.NODE_GLOBAL )
                .traverse( start )
                .nodes().stream().map(Visited::new);
     }

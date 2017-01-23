@@ -3,7 +3,7 @@ version := "0.1.0-SNAPSHOT"
 
 scalaVersion := "2.12.1"
 
-val neo4jVersion = "3.0.8"
+val neo4jVersion = "3.1.1"
 
 libraryDependencies ++=
   "org.neo4j" % "neo4j" % neo4jVersion % "provided" ::

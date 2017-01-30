@@ -31,3 +31,17 @@ begin
 end;
 $$ language plpgsql;
 
+
+select count(*) from bfsb(3235);
+select count(*) from bfsb(3235);
+select count(*) from bfsb(3235);
+select count(*) from bfsb(3235);
+select count(*) from bfsb(3235);
+select count(*) from bfsb(3235);
+select count(*) from bfsb(3235);
+select count(*) from bfsb(3235);
+select count(*) from bfsb(3235);
+select count(*) from bfsb(3235);
+select count(*) from bfsb(3235);
+
+-- :nmap ö :update<CR>:w !psql<CR>

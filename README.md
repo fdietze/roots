@@ -1,9 +1,16 @@
+Postgres
 ```
-zcat graph.sql.gz | psql
-cat traversal.sql| psql
-psql -c "explain analyze select * from bfsb(3235);"
+docker container rm postgres-benchmark
+docker run --detach --name postgres-benchmark postgres:latest
+alias psql='docker exec -i postgres-benchmark psql -U postgres'
+
+zcat graph.sql.gz | psql # import example data
+cat traversal.sql| psql # create traversal function and perform warmup
+psql -c "explain analyze select * from bfsb(3235);" # measure time
 ```
 
+
+Neo4J
 ```
 psql < exportGraph_postgres.sql
 cp graph_{edges,posts}.csv ~/local/neo4j/import

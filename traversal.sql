@@ -32,6 +32,7 @@ end;
 $$ language plpgsql;
 
 
+-- warmup
 select count(*) from bfsb(3235);
 select count(*) from bfsb(3235);
 select count(*) from bfsb(3235);
@@ -44,4 +45,5 @@ select count(*) from bfsb(3235);
 select count(*) from bfsb(3235);
 select count(*) from bfsb(3235);
 
--- :nmap ö :update<CR>:w !psql<CR>
+-- :nmap ö :update<CR>:w !docker exec -i postgres-benchmark psql -U postgres<CR>
+
